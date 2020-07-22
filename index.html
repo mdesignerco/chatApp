@@ -5,47 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <title>Frontend Mentor | [Chat App]</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./Assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 </head>
 <body>
-
-  Samuel Green
-  Available to Walk
-
-  That sounds great. I’d be happy with that.
-
-  Could you send over some pictures of your dog, please?
-
-  Here are a few pictures. She’s a happy girl!
-
-  Can you make it?
-
-  She looks so happy! The time we discussed works. How long shall I take her out for?
-
-  30 minute walk
-  $29
-
-  1 hour walk
-  $49
-
-  Type a message…
-
-  Simple booking
-
-  Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-  discuss arrangements and make bookings. Once the walk has been completed you can rate 
-  your walker and book again all through the chat.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="background1">
   </div>
+
+  <div class="background2">
+  </div>
+  <div class="content">
+    <div class="col">
+      <div class="phone">
+        <div class="phone__display">
+          <div class="phone__cam"></div>
+          <div class="app__head">
+              <div class="app__head__notificationBack">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="app__head__notificationInfo">
+                <div class="app__head__notificationInfo__profile">
+                  <img src="./Assets/images/avatar.jpg" alt="Samuel Green">
+                </div>
+                <div class="app__head__notificationInfo__description">
+                  <h3>Samuel Green</h3>
+                  <span>Available to Walk</span>
+                </div>
+              </div>
+              <div class="app__head__notificationOption">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+          </div>
+          <div class="phone__content">
+            <div class="message guess">
+              <p>That sounds great. I’d be happy with that.</p>
+            </div>
+            <div class="message guess">
+              <p>Could you send over some pictures of your dog, please?</p>
+            </div>
+            <div class="message local">
+              <div class="img-group">
+                <img src="./Assets/images/dog-image-1.jpg" alt="DOG 1" >
+                <img src="./Assets/images/dog-image-2.jpg" alt="DOG 2" >
+                <img src="./Assets/images/dog-image-3.jpg" alt="DOG 3" >
+              </div>
+            </div>
+            <div class="message local">
+              <p>Here are a few pictures. She’s a happy girl!</p>
+            </div>
+            <div class="message local">
+              <p>Can you make it?</p>
+            </div>
+            <div class="message guess">
+              <p>She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+            </div>
+            <div class="message guess price">
+              <div class="price__group">
+                <input type="radio" placeholder="Type a message…">
+                <p>30 minute walk</p>
+                <h4>$29</h4>
+              </div>
+            </div>
+            <div class="message guess price">
+              <div class="price__group">
+                <input type="radio" placeholder="Type a message…">
+                <p>1 hour walk</p>
+                <h4>$49</h4>
+              </div>
+            </div>
+          </div>
+          <div class="phone__footer">
+            <div class="input-group">
+              <input type="text" placeholder="Type a message…">
+              <button class="input-Button" ><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h1>Simple booking</h1>
+      <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+        discuss arrangements and make bookings. Once the walk has been completed you can rate 
+        your walker and book again all through the chat.</p>
+    </div>
+
+  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://mdesigner.co">mdesigner.co</a>.
+  </footer>
 </body>
 </html>

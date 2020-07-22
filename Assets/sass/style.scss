@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+$fontSize : 'Rubik', sans-serif;
+
+$PaleViolet : hsl(276, 100%, 81%);
+$ModerateViolet : hsl(276, 55%, 52%);
+$DesaturatedDarkViolet : hsl(271, 15%, 43%);
+$GrayishBlue : hsl(206, 6%, 79%);
+$VeryDarkDesaturatedViolet : hsl(271, 36%, 24%);
+$DarkGrayishViolet : hsl(270, 7%, 64%);
+
+//Gradients
+$LightMagenta : hsl(293, 100%, 63%);
+$LightViolet : hsl(264, 100%, 61%);
+
+//Secondary 
+$white : hsl(0, 0%, 100%);
+$appBackground : hsl(270, 20%, 96%);
+$submitButtonBackground : hsl(271, 36%, 24%);
+$radioButtonOutline : hsl(289, 100%, 72%);
+
+
+@mixin box-shadow ( $property, $X, $Y, $blur, $color  ) {
+  -webkit-box-shadow: $property $X $Y $blur $color;
+  -moz-box-shadow: $property $X $Y $blur $color;
+  box-shadow: $property $X $Y $blur $color;
+}
+
+@mixin Gradient( $property ) {
+  backround: $property;
+}
+
+@mixin respond-to($width){
+  @media only screen and (max-width: $width){
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: $fontSize;
+  line-height: 2em;
+  color: $DarkGrayishViolet;
+  font-weight: 400;
+  @include respond-to(768px) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 580px;
+  z-index: 2;
+  padding: 1em 0.5em;
+  background-color: $white;
+  border-radius: 30px;
+  @include box-shadow( 15px, 0, 30px, 0, rgba(black, 0.12) );
+  @include respond-to(768px) {
+    width: 280px;
+    height: 580px;
+    margin: 0 auto;
+  }
+  @include respond-to(425px) {
+    width: 230px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  &__display {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: $appBackground;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  &__cam {
+    position: absolute;
+    width: 80%;
+    height: 19px;
+    z-index: 10;
+    background-color: $white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  &__content {
+    width: 100%;
+    height: 80%;
+    padding: 0.5em;
+  }
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 0 0.5em;
+  }
+}
+
+.app {
+  &__head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 2em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    padding-bottom: 1em;
+    width: 100%;
+    height: 10%;
+    z-index: 1;
+    color: white;
+    border-radius: 10px;
+    background: linear-gradient(90deg, $LightMagenta 0%, $LightViolet 100%);
+    @include box-shadow( 15px, 0, 30px, 0, rgba(black, 0.12) );
+    &__notificationBack {
+
+    }
+    &__notificationInfo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      &__profile {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        padding-right: 0.5em;
+        >img {
+          padding: 0;
+          margin: 0;
+          height: 1.5em;
+          width: 1.5em;
+          border: 2px solid $white;
+          border-radius: 100%;
+          @include respond-to(768px){
+            height: 1.5em;
+            width: 1.5em;
+          }
+        }
+      }
+      &__description {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        >span {
+          color: $PaleViolet;
+          font-size: 0.6em;
+          line-height: 1em;
+        };
+        h3 {
+          margin: 0;
+          padding: 0;
+          color: $white;
+          font-size: 0.8em;
+          line-height: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5em;
+  &.guess {
+    justify-content: flex-start;
+    color: $ModerateViolet;
+    &>p {
+      padding: 0.8em;
+      width: auto;
+      max-width: 60%;
+      border-radius: 15px;
+      border-bottom-left-radius: 0;
+      background-color: rgba($PaleViolet, 0.25);
+    }
+  }
+  &.local {
+    justify-content: flex-end;
+    color: $VeryDarkDesaturatedViolet;
+    >p {
+      padding: 0.5em;
+      width: auto;
+      max-width: 60%;
+      border-radius: 15px;
+      border-bottom-right-radius: 0;
+      background-color: $white;
+    }
+  }
+  >p {
+    font-size: 0.6em;
+    line-height: 1.2em;
+  }
+  .img-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 60%;
+    >img {
+      width: 33%;
+      height: auto;
+      border-radius: 15px;
+      &:not(:last-child) {
+        margin-right: 0.5em;
+      }
+    }
+  }
+  .price {
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.2em 0.5em;
+      width: auto;
+      min-width: 60%;
+      color: $white;
+      border-radius: 15px;
+      border-bottom-left-radius: 0;
+      background: linear-gradient(90deg, $LightMagenta 0%, $LightViolet 100%);
+      @include respond-to(768px) {
+        min-width: 80%;
+      }
+      & p {
+        width: 80%;
+        font-size: 12px;
+        line-height: 20px;
+        padding-left: 0.5em;
+        color: rgba($white, 0.7);
+      }
+      & h4 {
+        width: 20%;
+        color: $white;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+i {
+  padding: 0.5em;
+}
+
+span {
+  font-size: 0.8em;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+      font-weight: 500;
+      color: $VeryDarkDesaturatedViolet;
+  }
+}
+
+.input-group {
+  display: flex;
+  width: 100%;
+  padding: 0.5em;
+  padding-left: 1em;
+  background-color: $white;
+  border-radius: 25px;
+  >input {
+    width: 90%;
+    border: none;
+    margin-right: 1em;
+    &::placeholder {
+      color: $DarkGrayishViolet;
+    }
+  }
+}
+
+.input-Button {
+  padding: 0.5em;
+  width: 2em;
+  height: 2em;
+  color: $white;
+  background-color: $VeryDarkDesaturatedViolet ;
+  border: none;
+  border-radius: 100%;
+  >i {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.background1 {
+  position: absolute;
+  width: 20%;
+  height: 80vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-bottom-left-radius: 250px;
+  background: linear-gradient( 0deg, $LightViolet 0%, $LightMagenta 100% );
+  border-bottom-right-radius: 250px;
+  @include respond-to(768px) {
+    width: 50%;
+    height: 50vh;
+    flex-direction: column;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 250px;
+  }
+}
+
+.background2 {
+  position: absolute;
+  width: 20%;
+  height: 60%;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba($PaleViolet, 0.2);
+  border-top-left-radius: 250px;
+  border-top-right-radius: 250px;
+  @include respond-to(768px) {
+    display: none;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  z-index: 2;
+  @include respond-to(768px) {
+    flex-direction: column;
+    width: 100%;
+  }
+  .col {
+    width: 100%;
+    padding: 1em;
+    @include respond-to(768px) {
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.attribution {
+  font-size: 12px;
+  a{
+    color: #c48f33;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "![Design preview for the Chat app CSS illustration coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdesignerco/chatApp.git"
+  },
+  "keywords": [
+    "chat",
+    "app"
+  ],
+  "author": "J Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdesignerco/chatApp/issues"
+  },
+  "homepage": "https://github.com/mdesignerco/chatApp#readme",
+  "dependencies": {
+    "sass": "^1.26.10"
+  }
+}
